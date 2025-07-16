@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Super Tarjimon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>
+        xush kelibsiz!
+    </h1>
+    
+    <textarea class="matn" placeholder="Matn kiriting..."></textarea>
+    
+    <div class="til-blok">
+      <select class="src-lang">
+        <option value="auto">🔍 avto aniqlash </option>
+        <option value="uz">O'zbek</option>
+        <option value="en">Ingliz</option>
+        <option value="ru">Rus</option>
+        <option value="fr">Fransuz</option>
+        <option value="de">Nemis</option>
+      </select>
+
+      <span>➡️</span>
+
+      <select class="dest-lang">
+        <option value="en">Ingliz</option>
+        <option value="uz">O'zbek</option>
+        <option value="ru">Rus</option>
+        <option value="fr">Fransuz</option>
+        <option value="de">Nemis</option>
+      </select>
+    </div>
+
+    <button class="btn">Tarjima qilish</button>
+
+    <div class="natija-blok">
+      <h3>Natija:</h3>
+      <p id="natija">...</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
