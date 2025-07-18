@@ -1,19 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Not Coin</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Topshiriqlar</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <div class="container">
-    <h1>Not Coin</h1>
-    <div id="buttons">
-      <button onclick="chooseNumber(1)">1</button>
-    </div>
-    <div id="result"></div>
+  <!-- 1-topshiriq -->
+  <marquee>1-topshiriq</marquee>
+  <button id="tugma">Bosing</button>
+
+  <!-- 2-topshiriq -->
+  <marquee>2-topshiriq</marquee>
+  <div class="quti-blok">
+    <input type="text" id="matn-kiritish" placeholder="Matn kiriting..." />
+    <h1 id="natija">Bu yerda matn chiqadi</h1>
   </div>
+
+  <!-- 3-topshiriq -->
+  <marquee>3-topshiriq</marquee>
+  <div class="maydon" id="kursor-maydoni">
+    <p id="koordinatalar">X: 0, Y: 0</p>
+  </div>
+
+  <!-- 4-topshiriq -->
+  <marquee>4-topshiriq</marquee>
+  <div id="rangli-quti"></div>
+  <p id="hisoblagich">2 marta bosishlar soni: 0</p>
+
+  <!-- 5-topshiriq -->
+  <marquee>5-topshiriq</marquee>
+  <input type="text" id="kirish-maydoni" placeholder="...">
+  <p id="xabar" class="ogohlantirish">Enter tugmasini bosing...</p>
 
   <script src="script.js"></script>
 </body>
-</html> 
+
+</html>
