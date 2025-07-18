@@ -1,41 +1,20 @@
 <!DOCTYPE html>
 <html lang="uz">
-
 <head>
-  <meta charset="UTF-8" />
-  <title>Topshiriqlar</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>Budilnik</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- 1-topshiriq -->
-  <marquee>1-topshiriq</marquee>
-  <button id="tugma">Bosing</button>
+    <div class="container">
+        <h1>Budilnik</h1>
+        <label for="alarmTime">Budilnik vaqtini tanlang:</label>
+        <input type="time" id="alarmTime">
+        <button onclick="setAlarm()">Ulash</button>
+        <p id="status">Budilnik o'rnatilmagan</p>
+    </div>
 
-  <!-- 2-topshiriq -->
-  <marquee>2-topshiriq</marquee>
-  <div class="quti-blok">
-    <input type="text" id="matn-kiritish" placeholder="Matn kiriting..." />
-    <h1 id="natija">Bu yerda matn chiqadi</h1>
-  </div>
-
-  <!-- 3-topshiriq -->
-  <marquee>3-topshiriq</marquee>
-  <div class="maydon" id="kursor-maydoni">
-    <p id="koordinatalar">X: 0, Y: 0</p>
-  </div>
-
-  <!-- 4-topshiriq -->
-  <marquee>4-topshiriq</marquee>
-  <div id="rangli-quti"></div>
-  <p id="hisoblagich">2 marta bosishlar soni: 0</p>
-
-  <!-- 5-topshiriq -->
-  <marquee>5-topshiriq</marquee>
-  <input type="text" id="kirish-maydoni" placeholder="...">
-  <p id="xabar" class="ogohlantirish">Enter tugmasini bosing...</p>
-
-  <script src="script.js"></script>
+    <audio id="Budilnik ovozi" src="./signal-elektronnogo-budilnika-33304.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
 </body>
-
 </html>
