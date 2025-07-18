@@ -1,61 +1,33 @@
-let tugma = document.getElementById('tugma');
-let matnKiritish = document.getElementById('matn-kiritish');
-let natija = document.getElementById('natija');
-let kursorMaydoni = document.getElementById('kursor-maydoni');
-let koordinatalar = document.getElementById('koordinatalar');
-let rangliQuti = document.getElementById('rangli-quti');
-let hisoblagich = document.getElementById('hisoblagich');
-let kirishMaydoni = document.getElementById('kirish-maydoni');
-let xabar = document.getElementById('xabar');
+let alarmTime = null;
+let alarmTimeout = null;
 
-// 1-topshiriq
-tugma.addEventListener('click', () => {
-  if (tugma.style.backgroundColor === 'red') {
-    tugma.style.backgroundColor = 'blue';
-  } else {
-    tugma.style.backgroundColor = 'red';
-  }
-});
+function setAlarm() {
+    const timeInput = document.getElementById("alarmTime").value;
+    if (!timeInput) {
+        alert("Iltimos, vaqtni tanlang!");
+        return;
+    }
 
-// 2-topshiriq
-matnKiritish.addEventListener('input', () => {
-  natija.textContent = matnKiritish.value || 'Bu yerda matn chiqadi';
-});
+    const [hours, minutes] = timeInput.split(":");
+    const now = new Date();
+    const alarmDate = new Date();
 
-// 3-topshiriq
-kursorMaydoni.addEventListener('mousemove', function(e) {
-  let x = e.offsetX;
-  let y = e.offsetY;
-  koordinatalar.textContent = 'X: ' + x + ', Y: ' + y;
-});
+    alarmDate.setHours(parseInt(hours));
+    alarmDate.setMinutes(parseInt(minutes));
+    alarmDate.setSeconds(0);
 
-kursorMaydoni.addEventListener('mouseleave', function() {
-  koordinatalar.textContent = 'X: -, Y: -';
-});
+    if (alarmDate <= now) {
+        alarmDate.setDate(alarmDate.getDate() + 1); // ertangi kunga o‘tkazish
+    }
 
-// 4-topshiriq
-let sanash = 0;
-let rangOzgardi = false;
+    const timeToAlarm = alarmDate - now;
 
-rangliQuti.addEventListener('dblclick', function() {
-  sanash++;
+    clearTimeout(alarmTimeout);
+    alarmTimeout = setTimeout(() => {
+        document.getElementById("alarmSound").play();
+        document.getElementById("status").textContent = "⏰ Budilnik chalindi!";
+        alert("Budilnik vaqti keldi!");
+    }, timeToAlarm);
 
-  if (!rangOzgardi) {
-    rangliQuti.style.backgroundColor = 'tomato';
-    rangOzgardi = true;
-  } else {
-    rangliQuti.style.backgroundColor = 'lightblue';
-    rangOzgardi = false;
-  }
-
-  hisoblagich.textContent = '2 marta bosishlar soni: ' + sanash;
-});
-
-// 5-topshiriq
-kirishMaydoni.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') {
-    kirishMaydoni.value = '';
-    xabar.textContent = 'Maydon tozalandi';
-    xabar.style.color = 'green';
-  }
-});
+    document.getElementById("status").textContent = "⏰ Budilnik o‘rnatildi: " + timeInput;
+}
